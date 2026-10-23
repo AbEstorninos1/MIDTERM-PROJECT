@@ -1,0 +1,177 @@
+#account-management {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.addAccountbtn {
+  padding: 11px 20px;
+  background: #d41e3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addAccountbtn:hover {
+  background: #a81730;
+}
+
+.account-content {
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+  background: white;
+  border: 1px solid #dde3ea;
+  border-radius: 10px;
+}
+
+.account-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.account-table th,
+.account-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #dde3ea;
+}
+
+.account-table th {
+  background: #f4f7fa;
+  color: #1f2933;
+  font-weight: 600;
+}
+
+.account-table td {
+  color: #374151;
+}
+
+.account-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.account-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status.inactive,
+.status.rejected,
+.status.disabled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.account-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 260px;
+}
+
+.account-actions button {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.removeAccountbtn {
+  margin-left: auto;
+  background: white;
+  border-color: #b91c1c !important;
+  color: #b91c1c;
+}
+
+.removeAccountbtn:hover {
+  background: #fee2e2;
+}
+
+.editAccountbtn {
+  background: white;
+  border-color: #d41e3c !important;
+  color: #d41e3c;
+}
+
+.editAccountbtn:hover {
+  background: #fef2f4;
+}
+
+.disableAccountbtn {
+  background: #b91c1c;
+  color: white;
+}
+
+.disableAccountbtn:hover {
+  background: #991b1b;
+}
+
+.approveAccountbtn {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.approveAccountbtn:hover {
+  background: #bbf7d0;
+}
+
+.rejectAccountbtn {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.rejectAccountbtn:hover {
+  background: #fecaca;
+}
+
+.enableAccountbtn {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.enableAccountbtn:hover {
+  background: #bbf7d0;
+}
+
+@media (max-width: 768px) {
+  #account-management {
+    padding: 14px;
+  }
+
+  .account-table th,
+  .account-table td {
+    padding: 12px;
+  }
+
+  .account-actions {
+    gap: 6px;
+  }
+
+  .account-actions button {
+    padding: 7px 10px;
+  }
+}

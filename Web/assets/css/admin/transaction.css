@@ -1,0 +1,315 @@
+#transaction-history {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.transaction-heading h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #1f2933;
+}
+
+.transaction-heading p {
+  margin: 6px 0 0;
+  color: #6b7785;
+  font-size: 14px;
+}
+
+.transaction-filters {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.transaction-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.transaction-filter span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.transaction-filter select,
+.transaction-filter input,
+.transaction-search input {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #dde3ea;
+  border-radius: 6px;
+  background: white;
+  color: #1f2933;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.transaction-filter select:focus,
+.transaction-filter input:focus,
+.transaction-search input:focus {
+  outline: none;
+  border-color: #d41e3c;
+}
+
+.transaction-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.transaction-search input {
+  width: 100%;
+}
+
+.transaction-content {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border: 1px solid #dde3ea;
+  border-radius: 10px;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #dde3ea;
+}
+
+.transaction-table th {
+  background: #f4f7fa;
+  color: #1f2933;
+  font-weight: 600;
+}
+
+.transaction-table td {
+  color: #374151;
+}
+
+.transaction-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.transaction-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.transaction-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.transaction-status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+
+.transaction-status.refunded {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.transaction-status.partial {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.transaction-table tbody tr {
+  cursor: pointer;
+}
+
+.transaction-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #6b7785;
+}
+
+.transaction-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.transaction-pagination button {
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid #dde3ea;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.transaction-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refund-btn {
+  padding: 7px 14px;
+  background: white;
+  border: 1px solid #b91c1c;
+  border-radius: 6px;
+  color: #b91c1c;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.refund-btn:hover:not(:disabled) {
+  background: #b91c1c;
+  color: white;
+}
+
+.refund-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  #transaction-history {
+    padding: 14px;
+  }
+
+  .transaction-filter {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  .transaction-search {
+    flex-basis: 100%;
+  }
+
+  .transaction-table th,
+  .transaction-table td {
+    padding: 12px;
+  }
+
+  .transaction-footer {
+    flex-wrap: wrap;
+  }
+}
+/* Voided */
+
+.transaction-status.voided {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.transaction-table tbody tr.voided-row td {
+  color: #9ca3af;
+}
+
+.transaction-table tbody tr.voided-row td:nth-child(5) {
+  text-decoration: line-through;
+}
+
+.transaction-table tbody tr.voided-row .transaction-status {
+  text-decoration: none;
+}
+
+.void-btn {
+  margin-left: 6px;
+  padding: 7px 14px;
+  background: #b91c1c;
+  border: 1px solid #b91c1c;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.void-btn:hover:not(:disabled) {
+  background: #991b1b;
+}
+
+.void-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Refund is orange, void is red */
+
+.refund-btn {
+  border-color: #d97706;
+  color: #b45309;
+}
+
+.refund-btn:hover:not(:disabled) {
+  background: #d97706;
+  color: white;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display:grid;
+  -webkit-mask: conic-gradient(from 15deg,#0000,#000);
+  animation: l26 1s infinite steps(12);
+}
+.loader,
+.loader:before,
+.loader:after{
+  background:
+    radial-gradient(closest-side at 50% 12.5%,
+     #f03355 96%,#0000) 50% 0/20% 80% repeat-y,
+    radial-gradient(closest-side at 12.5% 50%,
+     #f03355 96%,#0000) 0 50%/80% 20% repeat-x;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  transform: rotate(30deg);
+}
+.loader:after {
+  transform: rotate(60deg);
+}
+
+@keyframes l26 {
+  100% {transform:rotate(1turn)}
+}
+
+.transaction-table tbody tr.loading-row {
+  cursor: default;
+}
+
+.transaction-table tbody tr.loading-row:hover {
+  background: transparent;
+}
+
+.transaction-table .loading-row td {
+  padding: 70px 0;
+  border-bottom: none;
+}
+
+.transaction-table .loading-row .loader {
+  margin: 0 auto;
+}

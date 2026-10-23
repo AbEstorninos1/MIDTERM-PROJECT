@@ -1,0 +1,150 @@
+:root {
+    --bg: #f4f7fa;
+    --card: #ffffff;
+    --text: #1f2933;
+    --muted: #6b7785;
+    --line: #dde3ea;
+
+    --main: #d41e3c;
+    --main-dark: hwb(0 0% 58%);
+    --red: #d64545;
+    --green: #2e9e5b;
+
+    --font-small: 12px;
+    --font-normal: 14px;
+    --font-medium: 16px;
+    --font-large: 18px;
+    --font-xlarge: 22px;
+    --font-title: 26px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: var(--font-normal);
+    line-height: 1.5;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.register-box {
+    width: 100%;
+    max-width: 380px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 32px;
+}
+
+.register-box h4 {
+    margin: 0 0 5px;
+    font-size: var(--font-large);
+    color: black;
+}
+
+.register-box header p {
+    margin: 0 0 24px;
+    font-size: var(--font-xlarge);
+    color: var(--main);
+    font-weight: bold;
+}
+
+.register-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.register-box input {
+    width: 100%;
+    padding: 12px 4px;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: var(--font-medium);
+    transition: border-color 0.2s ease;
+}
+
+.register-box input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--main);
+}
+
+.register-box input::placeholder {
+    color: var(--muted);
+}
+
+.register-box input[type='submit'] {
+    margin-top: 2px;
+    padding: 12px;
+    background: var(--main);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.register-box input[type='submit']:hover {
+    background: var(--main-dark);
+}
+
+.register-box input[type='submit']:focus {
+    border-bottom: none;
+    outline: none;
+}
+
+.form-message {
+    margin: 0;
+    min-height: 21px;
+    font-size: var(--font-normal);
+}
+
+.form-message.error {
+    color: var(--red);
+}
+
+.form-message.success {
+    color: var(--green);
+}
+
+.create-account {
+    margin-top: 20px;
+    text-align: center;
+    font-size: var(--font-normal);
+    color: var(--muted);
+}
+
+.create-account p {
+    margin: 0;
+}
+
+.create-account a {
+    margin-left: 6px;
+    color: var(--main);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}

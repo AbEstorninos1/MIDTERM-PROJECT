@@ -1,0 +1,500 @@
+.custom-modal {
+  margin: auto;
+  width: min(420px, 90%);
+  padding: 24px;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  background: #fff;
+  color: #1f2933;
+  box-sizing: border-box;
+  box-shadow: 0 12px 40px #0003;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.custom-modal.wide {
+  width: min(560px, 92%);
+}
+
+.custom-modal::backdrop {
+  background: #0008;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dde3ea;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #d41e3c;
+}
+
+.closeModalbtn {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: #f4f7fa;
+  border: 1px solid #dde3ea;
+  border-radius: 5px;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  color: #1f2933;
+}
+
+.closeModalbtn:hover {
+  background: #d41e3c;
+  border-color: #d41e3c;
+  color: #fff;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-body input,
+.modal-body select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dde3ea;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: white;
+  color: #1f2933;
+}
+
+.modal-body input:focus,
+.modal-body select:focus {
+  outline: none;
+  border-color: #d41e3c;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.modal-actions button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancelModalbtn {
+  background: #f9fafb;
+  border: 1px solid #dde3ea !important;
+  color: #374151;
+}
+
+.cancelModalbtn:hover {
+  background: #e5e7eb;
+}
+
+.saveModalbtn {
+  background: #d41e3c;
+  color: white;
+}
+
+.saveModalbtn:hover {
+  background: #a81730;
+}
+
+.modal-error {
+  margin: 0;
+  min-height: 18px;
+  color: #dc2626;
+  font-size: 13px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.field > span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7785;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Image drop zone */
+
+.drop-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px;
+  border: 2px dashed #dde3ea;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7785;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.drop-zone:hover,
+.drop-zone.dragging {
+  border-color: #d41e3c;
+  background: #fff0f2;
+}
+
+.drop-zone img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f4f7fa;
+}
+
+.drop-zone small {
+  font-size: 12px;
+}
+
+/* Barcode and variants */
+
+.barcode-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.barcode-preview {
+  align-self: center;
+  max-width: 100%;
+}
+
+.variant-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+}
+
+/* Read-only receipt details */
+
+.detail-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eef1f4;
+  font-size: 14px;
+}
+
+.detail-list > div > span:first-child {
+  color: #6b7785;
+}
+
+.detail-list > div > span:last-child {
+  font-weight: 600;
+  text-align: right;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.detail-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #eef1f4;
+}
+
+.detail-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Variants checkbox and variant list */
+
+.modal-body fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+.modal-body fieldset[hidden] {
+  display: none;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2933;
+  cursor: pointer;
+}
+
+.modal-body .checkbox-field input {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  accent-color: #d41e3c;
+}
+
+.variant-head {
+  display: flex;
+  gap: 8px;
+}
+
+.variant-head input {
+  flex: 1;
+  min-width: 0;
+}
+
+.remove-variant-btn {
+  width: 38px;
+  border: none;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.remove-variant-btn:hover {
+  background: #fecaca;
+}
+
+.add-variant-btn {
+  padding: 10px;
+  border: 1px dashed #d41e3c;
+  border-radius: 8px;
+  background: #fff0f2;
+  color: #d41e3c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-variant-btn:hover {
+  background: #ffe0e5;
+}
+
+
+/* Question, complete and error modals */
+
+.message-modal {
+  margin: auto;
+  width: min(380px, 90%);
+  padding: 30px;
+  border: none;
+  border-radius: 16px;
+  background: #fff;
+  color: #111827;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 20px 60px #0003;
+  animation: messagePop 0.2s ease-out;
+}
+
+.message-modal::backdrop {
+  background: #0007;
+  backdrop-filter: blur(4px);
+}
+
+.message-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #d41e3c;
+}
+
+.message-modal.success .message-icon {
+  background: #2e9e5b;
+}
+
+.message-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.message-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #d41e3c;
+}
+
+.message-modal.success .message-title {
+  color: #2e9e5b;
+}
+
+.message-text {
+  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.message-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.message-actions button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.message-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.message-confirm {
+  background: #d41e3c;
+  border: 1px solid #d41e3c;
+  color: #fff;
+}
+
+.message-confirm:hover {
+  background: #a81730;
+}
+
+.message-modal.success .message-confirm {
+  background: #2e9e5b;
+  border-color: #2e9e5b;
+}
+
+.message-cancel {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+@keyframes messagePop {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Product modal: picture stays on the left, the form scrolls on the right */
+
+.custom-modal.product-modal {
+  width: min(920px, 94%);
+  overflow: hidden;
+}
+
+.custom-modal.product-modal[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-modal form {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.product-modal .modal-body {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.product-picture {
+  position: sticky;
+  top: 0;
+}
+
+.product-picture .drop-zone {
+  padding: 20px;
+  background: #f9fafb;
+}
+
+.product-picture .drop-zone img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.product-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: calc(90vh - 235px);
+  padding-right: 10px;
+  overflow-y: auto;
+}
+
+.product-fields::-webkit-scrollbar {
+  width: 8px;
+}
+
+.product-fields::-webkit-scrollbar-thumb {
+  background: #d7dde4;
+  border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+  .product-modal .modal-body {
+    grid-template-columns: 1fr;
+    max-height: calc(90vh - 235px);
+    overflow-y: auto;
+  }
+
+  .product-picture {
+    position: static;
+  }
+
+  .product-picture .drop-zone img {
+    width: 140px;
+  }
+
+  .product-fields {
+    max-height: none;
+    padding-right: 0;
+    overflow: visible;
+  }
+}

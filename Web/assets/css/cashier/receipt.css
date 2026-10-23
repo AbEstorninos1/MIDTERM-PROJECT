@@ -1,0 +1,143 @@
+.receipt-paper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 380px;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background: var(--bg);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+.record-actions {
+  margin-top: 16px;
+}
+
+.record-actions button {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius);
+  font-size: var(--font-medium);
+  cursor: pointer;
+}
+
+.receipt-store {
+  display: block;
+  text-align: center;
+  font-size: var(--font-large);
+  margin-bottom: 4px;
+}
+
+.receipt-center {
+  text-align: center;
+  color: var(--muted);
+  font-size: var(--font-small);
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: var(--font-normal);
+}
+
+.receipt-row span:first-child {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.receipt-row span:last-child {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.receipt-divider {
+  border-top: 1px dashed var(--line);
+  margin: 12px 0;
+  flex-shrink: 0;
+}
+
+.receipt-items {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.receipt-total {
+  font-weight: 700;
+}
+
+@media print {
+  @page {
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .receipt-paper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 0;
+  }
+
+  
+
+  .receipt-items {
+    flex: none;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    min-height: 600px;
+    margin-top: 150px;
+  }
+
+  .receipt-row {
+    break-inside: avoid;
+  }
+
+  .record-actions {
+    display: none;
+  }
+}
+
+.record-actions button + button {
+  margin-top: 8px;
+}
+
+.btn-refund {
+  background: white;
+  border: 1px solid #b91c1c;
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+.btn-refund:hover:not(:disabled) {
+  background: #b91c1c;
+  color: white;
+}
+
+.btn-refund:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
